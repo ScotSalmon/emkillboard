@@ -53,5 +53,6 @@ cache_update	home
 cache_time	1440
 DBUpdate	038
 upd_dbVersion	1.2.1
+cfg_log	1
 cfg_sqlhalt	1
 cfg_objcache 1
