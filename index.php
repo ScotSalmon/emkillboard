@@ -5,6 +5,8 @@
  * @package EDK
  */
 
+include('mybbauth.php');
+
 // Enable custom error handling.
 require_once ('common/includes/class.edkerror.php');
 
