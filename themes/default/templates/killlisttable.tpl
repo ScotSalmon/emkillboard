@@ -24,7 +24,9 @@
 						<tr onclick="window.location.href='{$k.urldetail}';">
 						{/if}
 						<td class="kb-table-imgcell">
+                                                    <a href="?a=kill_detail&amp;kll_id={$k.id}">
 							<img src='{$k.victimshipimage}' style="width: 32px; height: 32px;" alt="" />
+                                                    </a>
 						</td>
 						<td class="kl-shiptype-text">
 							<div class="no_stretch kl-shiptype-text">
