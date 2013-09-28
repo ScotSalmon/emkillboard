@@ -665,12 +665,12 @@ a:hover
 
 .kb-table-rows > tbody > tr.kb-table-row-kill:nth-child(even)
 {
-	background: #005000;
+	background: #007000;
 }
 
 .kb-table-rows > tbody > tr.kb-table-row-kill:nth-child(odd)
 {
-	background: #004000;
+	background: #006000;
 }
 
 .kb-table-rows > tbody > tr.kb-table-row-loss:nth-child(even)
