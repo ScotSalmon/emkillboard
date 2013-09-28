@@ -5,7 +5,8 @@
  * @package EDK
  */
 
-include('mybbauth.php');
+$forum_name = "Gradient";
+require('/etc/emcom/mybbauth.php');
 
 // Enable custom error handling.
 require_once ('common/includes/class.edkerror.php');
