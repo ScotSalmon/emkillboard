@@ -5,7 +5,7 @@
  * @package EDK
  */
 
-$forum_name = "Gradient";
+$forum_name = "<span class=\"grdmainforum\">Gradient</span>";
 require('/etc/emcom/mybbauth.php');
 
 // Enable custom error handling.
