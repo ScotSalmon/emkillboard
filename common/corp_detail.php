@@ -273,7 +273,7 @@ class pCorpDetail extends pageAssembly
 			case "":
 				$list = new KillList();
 				$list->setOrdered(true);
-				$list->setLimit(10);
+				$list->setLimit(50);
 				$list->addInvolvedCorp($this->crp_id);
 				if ($this->scl_id) $list->addVictimShipClass($this->scl_id);
 				else $list->setPodsNoobShips(config::get('podnoobs'));
@@ -281,13 +281,13 @@ class pCorpDetail extends pageAssembly
 				if (config::get('killlist_involved')) $list->setCountInvolved(true);
 
 				$ktab = new KillListTable($list);
-				$ktab->setLimit(10);
+				$ktab->setLimit(50);
 				$ktab->setDayBreak(false);
 				$smarty->assign('kills', $ktab->generate());
 
 				$list = new KillList();
 				$list->setOrdered(true);
-				$list->setLimit(10);
+				$list->setLimit(50);
 				$list->addVictimCorp($this->crp_id);
 				if ($this->scl_id) $list->addVictimShipClass($this->scl_id);
 				else $list->setPodsNoobShips(config::get('podnoobs'));
@@ -295,7 +295,7 @@ class pCorpDetail extends pageAssembly
 				if (config::get('killlist_involved')) $list->setCountInvolved(true);
 
 				$ltab = new KillListTable($list);
-				$ltab->setLimit(10);
+				$ltab->setLimit(50);
 				$ltab->setDayBreak(false);
 				$smarty->assign('losses', $ltab->generate());
 				return $smarty->fetch(get_tpl('detail_kl_default'));
@@ -349,12 +349,14 @@ class pCorpDetail extends pageAssembly
 				$list->setPodsNoobShips(config::get('podnoobs'));
 				$list->setMonth($this->month);
 				$list->setYear($this->year);
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Kills");
 				$smarty->assign('monthly_stats', $table->generate());
 
 				$list = new TopList_Kills();
 				$list->addInvolvedCorp($this->crp_id);
 				$list->setPodsNoobShips(config::get('podnoobs'));
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Kills");
 				$smarty->assign('total_stats', $table->generate());
 
@@ -378,12 +380,14 @@ class pCorpDetail extends pageAssembly
 				$list->setPodsNoobShips(config::get('podnoobs'));
 				$list->setMonth($this->month);
 				$list->setYear($this->year);
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Points");
 				$smarty->assign('monthly_stats', $table->generate());
 
 				$list = new TopList_Score();
 				$list->addInvolvedCorp($this->crp_id);
 				$list->setPodsNoobShips(config::get('podnoobs'));
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Points");
 				$smarty->assign('total_stats', $table->generate());
 
@@ -407,12 +411,14 @@ class pCorpDetail extends pageAssembly
 				$list->setPodsNoobShips(config::get('podnoobs'));
 				$list->setMonth($this->month);
 				$list->setYear($this->year);
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Solokills");
 				$smarty->assign('monthly_stats', $table->generate());
 
 				$list = new TopList_SoloKiller();
 				$list->addInvolvedCorp($this->crp_id);
 				$list->setPodsNoobShips(config::get('podnoobs'));
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Solokills");
 				$smarty->assign('total_stats', $table->generate());
 
@@ -437,12 +443,14 @@ class pCorpDetail extends pageAssembly
 				$list->setPodsNoobShips(config::get('podnoobs'));
 				$list->setMonth($this->month);
 				$list->setYear($this->year);
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Kills");
 				$smarty->assign('monthly_stats', $table->generate());
 
 				$list = new TopList_DamageDealer();
 				$list->addInvolvedCorp($this->crp_id);
 				$list->setPodsNoobShips(config::get('podnoobs'));
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Kills");
 				$smarty->assign('total_stats', $table->generate());
 
@@ -472,6 +480,7 @@ class pCorpDetail extends pageAssembly
 				$list->addInvolvedCorp($this->crp_id);
 				$list->setMonth($this->month);
 				$list->setYear($this->year);
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Kills");
 				$smarty->assign('monthly_stats', $table->generate());
 
@@ -482,6 +491,7 @@ class pCorpDetail extends pageAssembly
 				$list->addVictimShipClass(12); // barge
 				$list->addVictimShipClass(14); // transport
 				$list->addInvolvedCorp($this->crp_id);
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Kills");
 				$smarty->assign('total_stats', $table->generate());
 
@@ -506,12 +516,14 @@ class pCorpDetail extends pageAssembly
 				$list->setPodsNoobShips(config::get('podnoobs'));
 				$list->setMonth($this->month);
 				$list->setYear($this->year);
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Losses");
 				$smarty->assign('monthly_stats', $table->generate());
 
 				$list = new TopList_Losses();
 				$list->addVictimCorp($this->crp_id);
 				$list->setPodsNoobShips(config::get('podnoobs'));
+				$list->setLimit(50);
 				$table = new TopTable_Pilot($list, "Losses");
 				$smarty->assign('total_stats', $table->generate());
 
